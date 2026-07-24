@@ -1,0 +1,14 @@
+{
+  "userSucess":{
+    "userName": "Dough",
+    "userEmail" : "dough@teste.com",
+    "userPassword" : "testeemaisteste"
+
+  },
+
+  "userFailed":{
+    "userEmail" : "kksk@teste.com",
+    "userPassword" : "4846389515"
+
+  }
+}
