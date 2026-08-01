@@ -5,7 +5,7 @@ class LoginPage{
          passwordField: "[data-testid='senha']",
          loginButton:"[data-testid='entrar']",
          logoutButton: '[data-testid="logout"]',
-         signinError: '.alert-dismissible'  
+         signinError: "[role='alert']"
         }
         return selectors
 
