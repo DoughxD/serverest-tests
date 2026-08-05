@@ -1,14 +1,21 @@
 {
-  "userSucess":{
+  "userADM":{
     "userName": "Fulano da Silva",
-    "userEmail" : "fulano@qa.com",
-    "userPassword" : "qateste"
+    "userEmail" : "admin@qa.com",
+    "userPassword" : "teste123"
+
+  },
+
+  "user":{
+    "userName": "Fulano da Silva",
+    "userEmail" : "user@qa.com",
+    "userPassword" : "teste123"
 
   },
 
   "userFailed":{
-    "userEmail" : "kksk@teste.com",
-    "userPassword" : "4846389515"
+    "userEmail" : "errado@qa.com",
+    "userPassword" : "senhaerrada"
 
   }
 }

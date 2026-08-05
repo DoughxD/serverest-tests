@@ -15,7 +15,7 @@ class LoginPage{
 
     }
 
-    loginWithUser(username, password){
+    loginUser(username, password){
         cy.get(this.selectorsList().usernameField).type(username)
         cy.get(this.selectorsList().passwordField).type(password)
         cy.get(this.selectorsList().loginButton).click()
@@ -24,13 +24,14 @@ class LoginPage{
 
     }
 
-    loginWithWrongUser(username, password){
+    loginWrongUser(username, password){
         cy.get(this.selectorsList().usernameField).type(username)
         cy.get(this.selectorsList().passwordField).type(password)
         cy.get(this.selectorsList().loginButton).click()
         cy.get(this.selectorsList().signinError).should('be.visible')
 
     }
+
 
     
 }

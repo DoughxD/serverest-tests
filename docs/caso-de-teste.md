@@ -1,61 +1,127 @@
 # Casos de Teste — Serverest
 
-## Login
+---
+## UI — Cadastro
 
-### CT01 — Login com sucesso
+### TC-UI-001 — Cadastro com sucesso (Administrador)
 
-- **Endpoint:** POST /login
-- **Entrada:** email: fulano@qa.com, senha: qateste
-- **Resultado esperado:** status 200, token retornado
+**Pré-condição:** Usuário administrador deve ser cadastrado no banco de dados.
 
-### CT02 — Login com credencial inválida
+**Dados:**
+- nome: Fulano da Silva  
+- Email: admin@qa.com  
+- Senha: teste123  
 
-- **Endpoint:** POST /login
-- **Entrada:** email: kksk@qa.com, senha: 4846389515
-- **Resultado esperado:** status 401, mensagem de erro
+**Passos:**  
+1. Acessar a página de Cadastro
+2. Inserir um nome de usuário no campo "Digite seu nome"  
+3. Inserir o email no campo "Digite seu Email"  
+4. Inserir a senha no campo "Digite seu Senha"
+5. Marcar a check-box como administrador
+6. Clicar no botão "Cadastrar"
+
+**Resultado esperado:** cadastro efetuado com sucesso. Usuário redirecionado para a tela de administração e mensagem de boas-vindas exibida.
+
+### TC-UI-002 — Cadastro com sucesso (Usuário)
+
+**Pré-condição:** o Administrador deve ser cadastrado no banco de dados.
+
+**Dados:**  
+- nome: Fulano da Silva 
+- Email: user@qa.com  
+- Senha: teste123  
+
+**Passos:**  
+1. Acessar a página de Cadastro
+2. Inserir um nome de usuário no campo "Digite seu nome"  
+3. Inserir o email no campo "Digite seu Email"  
+4. Inserir a senha no campo "Digite seu Senha"
+5. Clicar no botão "Cadastrar"
+
+**Resultado esperado:** cadastro efetuado com sucesso. Usuário redirecionado para a Home Page / Vitrine de Produtos e mensagem de boas-vindas exibida.
+
+## UI — Login
+
+### TC-UI-003 — Login com sucesso (Administrador)
+
+**Pré-condição:** Usuário administrador cadastrado no banco de dados.
+
+**Dados:**  
+- Email: admin@qa.com  
+- Senha: teste123  
+
+**Passos:**  
+1. Acessar a página de login  
+2. Inserir o email no campo "Email"  
+3. Inserir a senha no campo "Senha"  
+4. Clicar no botão "Entrar"  
+
+**Resultado esperado:** Login efetuado com sucesso. Usuário redirecionado para o Dashboard Administrativo e mensagem de boas-vindas exibida.
 
 ---
 
-## Cadastro de usuário
+### TC-UI-004 — Login com sucesso (Usuário comum)
 
-### CT03 — Cadastro com dados válidos
+**Pré-condição:** Usuário comum cadastrado no banco de dados.
 
-- **Endpoint:** POST /usuarios
-- **Entrada:** nome, email, senha (dados válidos)
-- **Resultado esperado:** status 201, usuário criado
+**Dados:**  
+- Email: user@qa.com  
+- Senha: teste123  
 
-### CT04 — Cadastro com email duplicado
+**Passos:**  
+1. Acessar a página de login  
+2. Inserir o email no campo "Email"  
+3. Inserir a senha no campo "Senha"  
+4. Clicar no botão "Entrar"  
 
-- **Endpoint:** POST /usuarios
-- **Entrada:** mesmo email do CT03
-- **Resultado esperado:** status 400, mensagem de erro
-
----
-
-## Produtos
-
-### CT05 — Listar produtos
-
-- **Endpoint:** GET /produtos
-- **Entrada:** nenhuma
-- **Resultado esperado:** status 200, lista de produtos
-
-### CT06 — Criar produto com token válido
-
-- **Endpoint:** POST /produtos
-- **Entrada:** nome, preco, descricao, quantidade + token
-- **Resultado esperado:** status 201, produto criado
-
-### CT07 — Criar produto sem token
-
-- **Endpoint:** POST /produtos
-- **Entrada:** nome, preco, descricao, quantidade (sem token)
-- **Resultado esperado:** status 401, mensagem de erro
+**Resultado esperado:** Login efetuado com sucesso. Usuário redirecionado para a Home Page / Vitrine de Produtos e mensagem de boas-vindas exibida.
 
 ---
 
-## Observações
+### TC-UI-005 — Falha no login — Credenciais inválidas
 
-- Os dados devem ser dinâmicos para evitar duplicidade (ex: timestamp no email)
-- Os testes de API podem ser automatizados com Cypress
-- Os testes de UI devem validar redirecionamentos e mensagens visíveis
+**Pré-condição:** Nenhuma.
+
+**Dados:**  
+- Email: errado@qa.com  
+- Senha: senhaerrada  
+
+**Passos:**  
+1. Acessar a página de login  
+2. Inserir o email  
+3. Inserir a senha  
+4. Clicar em "Entrar"  
+
+**Resultado esperado:** Login não realizado. Sistema permanece na tela de login e exibe a mensagem "Email e/ou senha inválidos".
+
+---
+
+### TC-UI-006 — Validação de campos obrigatórios vazios
+
+**Pré-condição:** Nenhuma.
+
+**Dados:**  
+- Email: (vazio)  
+- Senha: (vazio)  
+
+**Passos:**  
+1. Acessar a página de login  
+2. Deixar os campos "Email" e "Senha" em branco  
+3. Clicar no botão "Entrar"  
+
+**Resultado esperado:** Login não realizado. Sistema exibe as mensagens "Email é obrigatório" e "Password é obrigatório".
+
+---
+
+## API — Login
+
+### TC-API-001 — Autenticação com sucesso (Status 200)
+
+**Pré-condição:** Usuário válido cadastrado no sistema.
+
+**Payload:**  
+```json
+{
+  "email": "valido@qa.com",
+  "password": "123"
+}
