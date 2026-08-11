@@ -5,7 +5,8 @@ class LoginPage{
          passwordField: "[data-testid='senha']",
          loginButton:"[data-testid='entrar']",
          logoutButton: '[data-testid="logout"]',
-         signinError: "[role='alert']"
+         signinError: "[role='alert']",
+         none: "[role='alert']"
         }
         return selectors
 
@@ -32,6 +33,15 @@ class LoginPage{
 
     }
 
+    loginWithBothNone(){
+        cy.get(this.selectorsList().usernameField).clear()
+        cy.get(this.selectorsList().passwordField).clear()
+        cy.get(this.selectorsList().loginButton).click()
+        cy.get(this.selectorsList().none).eq(0).should('be.visible')
+        cy.get(this.selectorsList().none).eq(1).should('be.visible')
+        
+
+    }
 
     
 }
