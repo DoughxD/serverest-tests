@@ -13,7 +13,3 @@ describe('TC-UI-006 — Validação de campos obrigatórios vazios', () => {
   })
 })
 
-describe('', () => {
-  it('', () => {
-    })
-})
