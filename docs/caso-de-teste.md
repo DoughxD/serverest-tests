@@ -125,3 +125,5 @@
   "email": "valido@qa.com",
   "password": "123"
 }
+
+#teste CI
