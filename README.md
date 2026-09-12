@@ -47,3 +47,4 @@ Status: ⚠️ Em ajuste
 Responsável
 Douglas Sampaio — QA Junior
 
+Testando CI
