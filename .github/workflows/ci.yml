@@ -3,7 +3,7 @@ name: Cypress CI
 on:
   push:
     branches: [ main ]
-  pull_request:
+  pull_request:asdasdasda
     branches: [ main ]
 
 jobs:
