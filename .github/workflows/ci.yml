@@ -3,7 +3,7 @@ name: Cypress CI
 on:
   push:
     branches: [ main ]
-  pull_request:
+  pull_request:asdasdasda
     branches: [ main ]
 
 jobs:
@@ -24,4 +24,8 @@ jobs:
 
       - name: Rodar testes Cypress
         run: npx cypress run
+<<<<<<< HEAD
         working-directory: ./automation # 👈 Aponta para a pasta correta
+=======
+        working-directory: ./automation # 👈 Aponta para a pasta correta
+>>>>>>> 5a2e9c68f000b398721f379b73cf0dee5e680daa
