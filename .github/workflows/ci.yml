@@ -20,6 +20,8 @@ jobs:
 
       - name: Instalar dependências
         run: npm install
+        working-directory: ./automation # 👈 Aponta para a pasta correta
 
       - name: Rodar testes Cypress
         run: npx cypress run
+        working-directory: ./automation # 👈 Aponta para a pasta correta
