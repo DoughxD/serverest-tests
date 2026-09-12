@@ -42,8 +42,6 @@ Casos de Teste: docs/casos-de-teste.md
 CI/CD
 Pipeline configurado com GitHub Actions para execução automática dos testes em cada push.
 
-Status: ⚠️ Em ajuste
-
 Responsável
 Douglas Sampaio — QA Junior
 
