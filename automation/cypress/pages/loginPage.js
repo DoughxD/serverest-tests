@@ -41,7 +41,7 @@ class LoginPage{
         cy.get(this.selectorsList().loginButton).click()
         cy.contains('Email é obrigatório').should('be.visible')
         cy.contains('Password é obrigatório').should('be.visible')
-        //teste
+        //teste teste
 
     }
 
