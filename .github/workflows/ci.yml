@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # 👈 Atualizado para v4
 
       - name: Instalar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4 # 👈 Atualizado para v4
         with:
-          node-version: 20 # 👈 Mudamos de 18 para 20
+          node-version: 20
 
       - name: Instalar dependências
         run: npm install
