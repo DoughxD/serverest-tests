@@ -1,21 +1,16 @@
 {
-  "userADM":{
+  "userADM": {
     "userName": "Fulano da Silva",
-    "userEmail" : "admin@qa.com",
-    "userPassword" : "teste123"
-
+    "userEmail": "admin{timestamp}@qa.com",
+    "userPassword": "teste123"
   },
-
-  "user":{
+  "user": {
     "userName": "Fulano da Silva",
-    "userEmail" : "user@qa.com",
-    "userPassword" : "teste123"
-
+    "userEmail": "user{timestamp}@qa.com",
+    "userPassword": "teste123"
   },
-
-  "userFailed":{
-    "userEmail" : "errado@qa.com",
-    "userPassword" : "senhaerrada"
-
+  "userFailed": {
+    "userEmail": "errado@qa.com",
+    "userPassword": "senhaerrada"
   }
 }
