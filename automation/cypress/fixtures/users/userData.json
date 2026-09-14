@@ -1,12 +1,12 @@
 {
   "userADM": {
     "userName": "Fulano da Silva",
-    "userEmail": "admin{timestamp}@qa.com",
+    "userEmail": "adminTIMESTAMP@qa.com",
     "userPassword": "teste123"
   },
   "user": {
     "userName": "Fulano da Silva",
-    "userEmail": "user{timestamp}@qa.com",
+    "userEmail": "userTIMESTAMP@qa.com",
     "userPassword": "teste123"
   },
   "userFailed": {
