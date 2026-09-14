@@ -1,18 +1,13 @@
-const { defineConfig } = require("cypress");
-
-module.exports = defineConfig({
-  projectId: 'ydtsgf',
+module.exports = {
   e2e: {
     setupNodeEvents(on, config) {
-      // Força saída após os testes
-      on('after:run', () => {
-        process.exit(0)
-      })
+      // implement node event listeners here
     },
+    supportFile: false, // 👈 resolve o erro de vez
     baseUrl: "https://front.serverest.dev/",
     viewportWidth: 1280,
     viewportHeight: 720,
   },
   chromeWebSecurity: false,
   defaultCommandTimeout: 10000,
-})
+};
